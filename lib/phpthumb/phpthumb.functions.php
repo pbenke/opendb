@@ -1043,4 +1043,15 @@ if (!function_exists('imagesavealpha')) {
 	}
 }
 
+/**
+ * An ugly, non-ASCII-character safe replacement of escapeshellarg()
+ * http://php.net/manual/en/function.escapeshellarg.php#111919
+ */
+
+function escape_shell_arg($file) {
+
+	return "'" . str_replace("'", "'\"'\"'", $file) . "'";
+
+}
+
 ?>
